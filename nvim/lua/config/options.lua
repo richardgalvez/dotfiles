@@ -8,10 +8,16 @@ local opt = vim.opt
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
-opt.expandtab = true
 
 -- Disable relative line numbers
 opt.relativenumber = false
 
 -- Enable trailing spaces to be dots
-opt.listchars = { trail = "⋅"}
+opt.listchars = {
+  tab = "  ", -- render tab as blank space
+  trail = "⋅", -- trailing spaces still visible
+}
+opt.expandtab = true -- (optional) so you're not fighting Go's conventions
+
+-- Disable LazyVim auto format
+vim.g.autoformat = false
